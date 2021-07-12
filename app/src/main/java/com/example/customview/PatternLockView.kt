@@ -70,36 +70,35 @@ class PatternLockView : GridLayout {
     constructor(context: Context, attributeSet: AttributeSet) : super(context, attributeSet) {
         val ta = context.obtainStyledAttributes(attributeSet, R.styleable.PatternLockView)
         regularCellBackground =
-            ta.getDrawable(R.styleable.PatternLockView_plv_regularCellBackground)
+            ta.getDrawable(R.styleable.PatternLockView_regularCellBackground)
         regularDotColor = ta.getColor(
-            R.styleable.PatternLockView_plv_regularDotColor,
+            R.styleable.PatternLockView_regularDotColor,
             ContextCompat.getColor(context, R.color.regularColor)
         )
         regularDotRadiusRatio =
-            ta.getFloat(R.styleable.PatternLockView_plv_regularDotRadiusRatio, DEFAULT_RADIUS_RATIO)
+            ta.getFloat(R.styleable.PatternLockView_regularDotRadiusRatio, DEFAULT_RADIUS_RATIO)
 
         selectedCellBackground =
-            ta.getDrawable(R.styleable.PatternLockView_plv_selectedCellBackground)
+            ta.getDrawable(R.styleable.PatternLockView_selectedCellBackground)
         selectedDotColor = ta.getColor(
-            R.styleable.PatternLockView_plv_selectedDotColor,
+            R.styleable.PatternLockView_selectedDotColor,
             ContextCompat.getColor(context, R.color.selectedColor)
         )
         selectedDotRadiusRatio = ta.getFloat(
-            R.styleable.PatternLockView_plv_selectedDotRadiusRatio,
+            R.styleable.PatternLockView_selectedDotRadiusRatio,
             DEFAULT_RADIUS_RATIO
         )
 
-        errorCellBackground = ta.getDrawable(R.styleable.PatternLockView_plv_errorCellBackground)
+        errorCellBackground = ta.getDrawable(R.styleable.PatternLockView_errorCellBackground)
         errorDotColor = ta.getColor(
-            R.styleable.PatternLockView_plv_errorDotColor,
+            R.styleable.PatternLockView_errorDotColor,
             ContextCompat.getColor(context, R.color.errorColor)
         )
         errorDotRadiusRatio =
-            ta.getFloat(R.styleable.PatternLockView_plv_errorDotRadiusRatio, DEFAULT_RADIUS_RATIO)
+            ta.getFloat(R.styleable.PatternLockView_errorDotRadiusRatio, DEFAULT_RADIUS_RATIO)
 
-        lineStyle = ta.getInt(R.styleable.PatternLockView_plv_lineStyle, 1)
         lineWidth = ta.getDimensionPixelSize(
-            R.styleable.PatternLockView_plv_lineWidth,
+            R.styleable.PatternLockView_lineWidth,
             TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP,
                 DEFAULT_LINE_WIDTH,
@@ -107,16 +106,16 @@ class PatternLockView : GridLayout {
             ).toInt()
         )
         regularLineColor = ta.getColor(
-            R.styleable.PatternLockView_plv_regularLineColor,
+            R.styleable.PatternLockView_regularLineColor,
             ContextCompat.getColor(context, R.color.selectedColor)
         )
         errorLineColor = ta.getColor(
-            R.styleable.PatternLockView_plv_errorLineColor,
+            R.styleable.PatternLockView_errorLineColor,
             ContextCompat.getColor(context, R.color.errorColor)
         )
 
         spacing = ta.getDimensionPixelSize(
-            R.styleable.PatternLockView_plv_spacing,
+            R.styleable.PatternLockView_spacing,
             TypedValue.applyDimension(
                 TypedValue.COMPLEX_UNIT_DIP,
                 DEFAULT_SPACING,
@@ -124,18 +123,18 @@ class PatternLockView : GridLayout {
             ).toInt()
         )
 
-        plvRowCount = ta.getInteger(R.styleable.PatternLockView_plv_rowCount, DEFAULT_ROW_COUNT)
+        plvRowCount = ta.getInteger(R.styleable.PatternLockView_rowCount, DEFAULT_ROW_COUNT)
         plvColumnCount =
-            ta.getInteger(R.styleable.PatternLockView_plv_columnCount, DEFAULT_COLUMN_COUNT)
+            ta.getInteger(R.styleable.PatternLockView_columnCount, DEFAULT_COLUMN_COUNT)
 
         errorDuration =
-            ta.getInteger(R.styleable.PatternLockView_plv_errorDuration, DEFAULT_ERROR_DURATION)
+            ta.getInteger(R.styleable.PatternLockView_errorDuration, DEFAULT_ERROR_DURATION)
         hitAreaPaddingRatio = ta.getFloat(
-            R.styleable.PatternLockView_plv_hitAreaPaddingRatio,
+            R.styleable.PatternLockView_hitAreaPaddingRatio,
             DEFAULT_HIT_AREA_PADDING_RATIO
         )
         indicatorSizeRatio = ta.getFloat(
-            R.styleable.PatternLockView_plv_indicatorSizeRatio,
+            R.styleable.PatternLockView_indicatorSizeRatio,
             DEFAULT_INDICATOR_SIZE_RATIO
         )
         ta.recycle()
